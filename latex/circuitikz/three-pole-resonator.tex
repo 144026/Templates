@@ -1,0 +1,77 @@
+% !TEX program = xelatex
+\documentclass{article}
+
+\input{/home/drh/Templates/latex/preamble-core.tex}
+% NOTE: '\usepackage{circuitikz}[#1,#2,...]' format NOT supported!!!
+\usepackage[americaninductors,europeanresistors]{circuitikz}
+
+\begin{document}
+
+\setlength{\baselineskip}{32pt}
+
+% 
+\begin{circuitikz}
+	\ctikzset{bipoles/length=.8cm,resistors/scale=0.8}
+% 	\draw[color=gray!40] (-2,-2) grid (2,2);
+	\draw (0,0) node[npn](t){};
+	\draw (t.E) to[short] (0,-1) node[rground]{};
+	\draw (t.C) to[short] (0,0.5) to[short] (1,0.5) 
+	to[short] (1,-2) to[R,l^=$X_{be}$] (-1,-2) to[short] (-1,0) to (t.B);
+	\draw (1,-1) to[R,l^=$X_{ce}$,*-*] (0,-1) to[R,l^=$X_{bc}$,*-*] (-1,-1);
+\end{circuitikz}
+
+\bigskip
+% 三端电感
+\begin{circuitikz}
+	\ctikzset{bipoles/length=.8cm}
+% 	\draw[color=gray!40] (-2,-2) grid (2,2);
+	\draw (0,0) node[npn](t){};
+	\draw (t.E) to[short] (0,-1) node[rground]{};
+	\draw (t.C) to[short] (0,0.5) to[short] (1,0.5) 
+		to[short] (1,-2) to[C] (-1,-2) to[short] (-1,0) to (t.B);
+	\draw (1,-1) to[L,*-*] (0,-1) to[L,*-*] (-1,-1);
+\end{circuitikz}
+
+\bigskip
+%三端电容
+\begin{circuitikz}
+	\ctikzset{bipoles/length=.8cm}
+% 	\draw[color=gray!40] (-2,-2) grid (2,2);
+	\draw (0,0) node[npn](t){};
+	\draw (t.E) to[short] (0,-1) node[rground]{};
+	\draw (t.C) to[short] (0,0.5) to[short] (1,0.5) 
+		to[short] (1,-2) to[L] (-1,-2) to[short] (-1,0) to (t.B);
+	\draw (1,-1) to[C,*-*] (0,-1) to[C,*-*] (-1,-1);
+\end{circuitikz}
+
+\bigskip
+%串联改进型电容
+\begin{circuitikz}
+	\ctikzset{bipoles/length=.8cm}
+% 	\draw[color=gray!40] (-2,-2) grid (2,2);
+	\draw (0,0) node[npn](t){};
+	\draw (t.E) to[short] (0,-1) node[rground]{};
+	\draw (t.C) to[short] (0,0.5) to[short] (1,0.5) 
+		to[short] (1,-2) to[C] (0,-2) to[L] (-1,-2) 
+		to[short] (-1,0) to (t.B);
+	\draw (1,-1) to[C,*-*] (0,-1) to[C,*-*] (-1,-1);
+\end{circuitikz}
+
+\bigskip
+%并联改进型电容三端
+\begin{circuitikz}
+	\ctikzset{bipoles/length=.8cm}
+% 	\draw[color=gray!40] (-2,-2) grid (2,2);
+	\draw (0,0) node[npn](t){};
+	\draw (t.E) to[short] (0,-1) node[rground]{};
+	\draw (t.C) to[short] (0,0.5) to[short] (1,0.5) 
+		to[short] (1,-2) to[C] (0,-2) 
+		to[short] (0,-1.6) to[L] (-1,-1.6) 
+		to[short] (-1,0) to (t.B);
+		\draw (0,-2) to[short,*-] (0,-2.3) to[vC] (-1,-2.3) to[short] (-1,-2.3) to[short,-*] (-1,-1.6);
+	\draw (1,-1) to[C,*-*] (0,-1) to[C,*-*] (-1,-1);
+\end{circuitikz}
+
+\bigskip
+
+\end{document}

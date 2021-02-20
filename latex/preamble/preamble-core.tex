@@ -1,0 +1,36 @@
+% geometry, color and font
+\usepackage[tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{amsmath}
+
+% links
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=black,
+	urlcolor=blue,
+	citecolor=cyan,
+}
+
+% figures
+\usepackage{graphicx}
+\usepackage{tikz}
+
+% tables
+
+% code snippets(listings)
+\usepackage{listings}
+\lstset{
+	showstringspaces=false,
+	tabsize=4,
+	%numbers=left,
+	backgroundcolor=\color[RGB]{245,245,245},
+	%
+	basicstyle=\small\setmainfont{Fira Code Retina},
+	keywordstyle=\color[RGB]{40,40,255},
+	commentstyle=\color[RGB]{0,96,96},
+	stringstyle=\color[RGB]{128,0,0},
+}
+

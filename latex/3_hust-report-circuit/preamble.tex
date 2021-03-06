@@ -1,0 +1,107 @@
+%----------geometry, color and font------
+\usepackage[tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{ctex}
+%\usepackage{fontspec} contained by ctex
+\usepackage{amsmath}
+%----------geometry, color and font------
+
+
+%----------headers------------------------
+\usepackage{fancyhdr}
+\fancyhead[L]{\small \kaishu \ClassName}
+\fancyhead[R]{\small \kaishu \ReportName}
+%----------headers------------------------
+
+
+%----------figures-----------------------
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[americaninductors,europeanresistors]{circuitikz}
+%----------figures-----------------------
+
+
+% tables
+
+
+%----------captions----------------------
+\usepackage{float}
+\usepackage[
+    font=small, %
+    labelfont=bf, %
+    textfont=normalfont, %
+    labelformat=simple, %
+    labelsep=period %
+]{caption}
+\usepackage[
+    font=small, %
+    labelfont=normalfont, %
+    textfont=normalfont, %
+    labelformat=parens, %
+    labelsep=space %
+]{subcaption}
+%----------captions----------------------
+
+
+%----------xref--------------------------
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=black,
+	urlcolor=blue, citecolor=cyan, }
+\renewcommand{\figureautorefname}{图}
+\renewcommand{\subfigureautorefname}{图}
+\renewcommand{\tableautorefname}{表}
+\renewcommand{\subtableautorefname}{表}
+%----------xref--------------------------
+
+
+%----------toc------------------------------ 
+\usepackage[nottoc]{tocbibind} % add ref to toc
+\setcounter{tocdepth}{2}
+\usepackage{setspace}
+
+\usepackage{tocloft}
+\renewcommand{\contentsname}{目\ 录}
+\tocloftpagestyle{fancy} % this package overwrites pagestyle!
+%----------toc------------------------------ 
+
+
+
+%----------appendix------------------------
+\usepackage[page, toc, title, titletoc]{appendix} % page(appendixpagename), toc(appendixtocname)
+\renewcommand{\appendixname}{附录}
+\renewcommand{\appendixtocname}{附录}
+\renewcommand{\appendixpagename}{附录}
+%----------appendix------------------------
+
+
+%----------code snippets(listings)---------
+\usepackage{listings}
+\lstset{
+	showstringspaces=false,
+	tabsize=4,
+	numbers=left,
+	backgroundcolor=\color[RGB]{245,245,245},
+    basicstyle=\small\setmainfont{Courier New},
+	keywordstyle=\color[RGB]{40,40,255},
+	commentstyle=\color[RGB]{0,96,96},
+    numberstyle=\scriptsize\texttt,
+    stringstyle=\color[RGB]{128,0,0}
+}
+%----------code snippets(listings)---------
+
+
+%----------chinese section-----------------
+\usepackage{titlesec}
+\titleformat*{\section}{\fontsize{16pt}{\baselineskip}\bfseries\songti}
+\titleformat*{\subsection}{\fontsize{14pt}{\baselineskip}\bfseries\songti}
+\titleformat*{\subsubsection}{\fontsize{12pt}{\baselineskip}\bfseries\songti}
+%----------chinese section-----------------
+
+
+%----------marcos--------------------------
+\newcommand{\ClassName}{通信电子线路}
+\newcommand{\ReportName}{xxxx实验报告}
+%----------marcos--------------------------

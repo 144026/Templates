@@ -1,39 +1,24 @@
 % !TEX program = xelatex
 \documentclass[12pt]{article}
 
-\input{/home/drh/Templates/latex/preamble-core-ch.tex}
+\input{preamble.tex}
 
-\usepackage[americaninductors,europeanresistors]{circuitikz}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-\pagestyle{empty}
-\
 
-{
-\vspace{70pt}
-\centering\fontsize{24pt}{\baselineskip}\textbf{xxxx仿真}
-
-\vspace{35pt}
-\centering\fontsize{32pt}{\baselineskip}\textbf{实验报告}
-
-}
-
-\vspace{155pt}
-\begin{table}[htbp]
-	\centering
-	\begin{tabular}{ll}
-        学院:\quad  &\underline{\qquad 电子信息与通信学院\hspace{0.5cm} } \bigskip \\
-		班级:\quad  &\underline{\qquad 种子1801班\hspace{1.88cm} } \bigskip \\
-        时间:\quad  &\underline{\qquad 2020年11月16日\hspace{0.642cm} } \bigskip \\
-        学号:\quad  &\underline{\qquad U201813319\hspace{2.044cm} } \bigskip \\
-        姓名:\quad  &\underline{\qquad 董瑞华\hspace{2.975cm} } \bigskip \\
-% 		姓名:\quad  &\underline{\qquad \hspace{36pt}\hspace{2.975cm} } \bigskip \\
-	\end{tabular}
-\end{table}
+\input{contents/frontpage.tex}
 \newpage
-\pagestyle{plain}
 
+\begin{center}
+    \begin{spacing}{1.5}
+    \tableofcontents
+    \end{spacing}
+\end{center}
+\newpage
 
+%%%%%%%%%%%%%%%% main %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
 
 \section{实验目的}
 
@@ -49,6 +34,8 @@
 \subsection{实验原理}
 
 电路如图\ref{fig:cprin}所示。
+
+电图如\autoref{fig:cprin}所示。
 
 \begin{figure}[htbp]
 	\centering
@@ -87,7 +74,7 @@ Multisim仿真电路如图\ref{fig:csim}所示。
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=0.3]{figures/144026.png}
+	\includegraphics[scale=0.3]{figures/logo-hust-eic.png}
 	\caption{Multisim仿真电路}
 	\label{fig:csim}
 \end{figure}
@@ -101,7 +88,7 @@ Multisim仿真电路如图\ref{fig:csim}所示。
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[scale=0.3]{figures/144026.png}
+	\includegraphics[scale=0.3]{figures/logo-hust-eic.png}
 	\caption{直流偏置点}
 	\label{fig:simdc}
 \end{figure}
@@ -115,5 +102,17 @@ Multisim仿真电路如图\ref{fig:csim}所示。
 \section{实验结果及分析}
 
 \section{实验小结}
+
+
+\begin{appendices}
+
+\section{实验代码}
+\begin{lstlisting}[language=C]
+int main(int argc, char * argv[]){
+    printf("hello world");
+    return 0;
+}
+\end{lstlisting}
+\end{appendices}
 
 \end{document}

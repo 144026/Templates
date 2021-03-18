@@ -40,6 +40,8 @@
     labelformat=parens, %
     labelsep=space %
 ]{subcaption}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
 %----------captions----------------------
 
 
@@ -50,10 +52,10 @@
 	linkcolor=black,
 	filecolor=black,
 	urlcolor=blue, citecolor=cyan, }
-\renewcommand{\figureautorefname}{图}
-\renewcommand{\subfigureautorefname}{图}
-\renewcommand{\tableautorefname}{表}
-\renewcommand{\subtableautorefname}{表}
+\renewcommand{\figureautorefname}{图\hspace{-2pt}}
+\renewcommand{\subfigureautorefname}{图\hspace{-2pt}}
+\renewcommand{\tableautorefname}{表\hspace{-2pt}}
+\renewcommand{\subtableautorefname}{表\hspace{-2pt}}
 %----------xref--------------------------
 
 
@@ -64,7 +66,7 @@
 
 \usepackage{tocloft}
 \renewcommand{\contentsname}{目\ 录}
-\tocloftpagestyle{fancy} % this package overwrites pagestyle!
+\tocloftpagestyle{empty} % this package overwrites pagestyle!
 %----------toc------------------------------ 
 
 

@@ -9,8 +9,8 @@
 
 %----------headers------------------------
 \usepackage{fancyhdr}
-\fancyhead[L]{\small \kaishu \ClassName}
-\fancyhead[R]{\small \kaishu \ReportName}
+\fancyhead[L]{\small \kaishu \LeftHeader}
+\fancyhead[R]{\small \kaishu \RightHeader}
 %----------headers------------------------
 
 
@@ -48,10 +48,13 @@
 %----------xref--------------------------
 \usepackage{hyperref}
 \hypersetup{
+	backgroundcolor=\color[RGB]{245,245,245},
 	colorlinks=true,
 	linkcolor=black,
 	filecolor=black,
-	urlcolor=blue, citecolor=cyan, }
+	urlcolor=blue,
+    citecolor=cyan
+}
 \renewcommand{\figureautorefname}{图\hspace{-3pt}}
 \renewcommand{\subfigureautorefname}{图\hspace{-3pt}}
 \renewcommand{\tableautorefname}{表\hspace{-3pt}}
@@ -80,6 +83,7 @@
 
 
 %----------code snippets(listings)---------
+
 \usepackage{listings}
 \lstset{
 	showstringspaces=false,
@@ -92,6 +96,7 @@
     numberstyle=\scriptsize\texttt,
     stringstyle=\color[RGB]{128,0,0}
 }
+
 %----------code snippets(listings)---------
 
 
@@ -104,6 +109,6 @@
 
 
 %----------marcos--------------------------
-\newcommand{\ClassName}{通信电子线路}
-\newcommand{\ReportName}{xxxx实验报告}
+\newcommand{\LeftHeader}{通信电子线路}
+\newcommand{\RightHeader}{xxxx实验报告}
 %----------marcos--------------------------

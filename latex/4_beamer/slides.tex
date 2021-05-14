@@ -1,0 +1,187 @@
+% !TEX program = xelatex
+\documentclass{beamer}
+\mode<presentation>
+\usetheme{Boadilla}
+
+\title{this is a title}
+\author{author}
+\institute{institute}
+\date{\today}
+
+\usepackage{listings}
+\lstset{ %
+  backgroundcolor=\color{white},
+  basicstyle=\tiny\ttfamily,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{green},
+  escapeinside={\%*}{*)},
+  extendedchars=true,
+  frame=single,
+  keywordstyle=\color{blue},
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\tiny\color{gray},
+  rulecolor=\color{black},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  stepnumber=1,
+  stringstyle=\color{mauve},
+  tabsize=2,
+  title=\lstname,
+}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+% \defverbatim[colored]\mycode{
+% \begin{lstlisting}[language=C++]
+% void make_set(int X) {
+%   parent[X] = X;
+% }
+% \end{lstlisting}
+% }
+
+\begin{frame}
+\frametitle{frame one}
+
+\begin{itemize}
+\item
+point one
+\item
+point two
+\item
+point three
+
+point three line two
+\item
+point four
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{VEC or vector?}
+
+\begin{lstlisting}[language=C++]
+/* C */
+typedef struct loop *loop_p;
+DEF_VEC_P (loop_p);
+DEF_VEC_ALLOC_P (loop_p, gc);
+
+  VEC (loop_p, gc) *superloops;
+  VEC_reserve (loop_p, gc, superloops, depth);
+  VEC_index (loop_p, superloops, depth)
+  VEC_quick_push (loop_p, superloops, father);
+\end{lstlisting}
+
+\begin{uncoverenv}<2->
+\begin{lstlisting}[language=C++]
+// C++
+typedef std::vector<struct loop*, gc_allocator> loop_vec;
+  loop_vec* superloops;
+  superloops->reserve(depth);
+  superloops[depth];
+  superloops->push_back(father);
+\end{lstlisting}
+\end{uncoverenv}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Why not C++?}
+
+\begin{itemize}
+\item
+{\color{red} C++ is too slow!}
+\begin{uncoverenv}<2->
+\begin{itemize}
+{\color{green!50!black}
+\item
+C++ is only slower when using optional features which aren't in C.
+\item
+Sometimes C++ is faster (e.g., STL functions).
+\item
+We would only use features which are worthwhile.
+}
+\end{itemize}
+\end{uncoverenv}
+\item
+{\color{red} C++ is too complicated!}
+\begin{uncoverenv}<3->
+\begin{itemize}
+{\color{green!50!black}
+\item
+It's just another computer language.
+\item
+Maintainers will ensure that gcc continues to be maintainable.
+}
+\end{itemize}
+\end{uncoverenv}
+\item
+{\color{red} C++ library is a bootstrap problem!}
+\begin{uncoverenv}<4->
+\begin{itemize}
+{\color{green!50!black}
+\item
+C++ compilers are widely available, including older versions of gcc.
+\item
+We would have to ensure that gcc version N - 1 could always build gcc
+version N.
+\item
+We will link statically against {\tt libstdc++}.
+}
+\end{itemize}
+\end{uncoverenv}
+\item
+{\color{red} The FSF doesn't like it!}
+\begin{uncoverenv}<5->
+\begin{itemize}
+{\color{green!50!black}
+\item
+The FSF is not writing the code.
+}
+\end{itemize}
+\end{uncoverenv}
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusion}
+
+\begin{itemize}
+\item
+point one
+\item
+point two
+\begin{itemize}
+\item
+subpoint one
+\end{itemize}
+\end{itemize}
+
+
+\begin{block}{a block}
+this is a block
+\end{block}
+
+\begin{alertblock}{an alert}
+this is an alert
+\end{alertblock}
+
+\begin{exampleblock}{an example}
+this is an example
+\end{exampleblock}
+
+\end{frame}
+
+\end{document}

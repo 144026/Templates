@@ -2,13 +2,19 @@
 \usepackage[tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in]{geometry}
 \usepackage{xcolor}
 \usepackage{ctex}
-%\usepackage{fontspec} contained by ctex
 \usepackage{amsmath}
+%\usepackage{fontspec} contained by ctex
+% use Google Fonts
+\setmainfont{Noto Serif}
+\setsansfont{Roboto}
+\setmonofont{Source Code Pro}
 %----------geometry, color and font------
 
 
 %----------headers------------------------
 \usepackage{fancyhdr}
+%\fancyhead{}
+%\fancyfoot{}
 \fancyhead[L]{\small \kaishu \LeftHeader}
 \fancyhead[R]{\small \kaishu \RightHeader}
 %----------headers------------------------
@@ -40,8 +46,8 @@
     labelformat=parens, %
     labelsep=space %
 ]{subcaption}
-\renewcommand{\figurename}{\bfseries{图\hspace{-3pt}}}
-\renewcommand{\tablename}{\bfseries{表\hspace{-3pt}}}
+\renewcommand{\figurename}{\bfseries{图\hspace{-1pt}}}
+\renewcommand{\tablename}{\bfseries{表\hspace{-1pt}}}
 %----------captions----------------------
 
 
@@ -59,6 +65,8 @@
 \renewcommand{\tableautorefname}{表\hspace{-3pt}}
 \renewcommand{\subtableautorefname}{表\hspace{-3pt}}
 \renewcommand{\equationautorefname}{式\hspace{-3pt}}
+\renewcommand{\sectionautorefname}{节\hspace{-3pt}}
+\renewcommand{\subsectionautorefname}{节\hspace{-3pt}}
 %----------xref--------------------------
 
 
@@ -82,26 +90,51 @@
 %----------appendix------------------------
 
 
-%----------code snippets(listings)---------
-
+%----------listings for code (DEPRECATED)--
 \usepackage{listings}
-\lstset{
-    showtabs=false,
+\lstset{ %
+    backgroundcolor=\color{white},
+    basicstyle=\small\fontspec{Source Code Pro},
+    breakatwhitespace=false,
+    breaklines=true,
+    commentstyle=\color{green!50!black},
+    escapeinside={\%*}{*)},
+    extendedchars=true,
+    %frame=single,
+    keywordstyle=\color{blue},
+    numbers=left,
+    numbersep=5pt,
+    numberstyle=\tiny\color{gray},
+    rulecolor=\color{black},
     showspaces=false,
     showstringspaces=false,
-    numbers=left,
-    tabsize=4,
-    keepspaces=true,
-    breaklines=true,
-    backgroundcolor=\color[RGB]{245,245,245},
-    basicstyle=\small\setmainfont{Courier New},
-    keywordstyle=\color[RGB]{40,40,255},
-    commentstyle=\color[RGB]{0,96,96},
-    numberstyle=\scriptsize\texttt,
-    stringstyle=\color[RGB]{128,0,0}
+    showtabs=false,
+    stepnumber=1,
+    stringstyle=\color[RGB]{128,0,0},
+    tabsize=2
 }
+%----------listings for code (DEPRECATED)--
 
-%----------code snippets(listings)---------
+
+%----------minted for code-----------------
+\usepackage[
+    cache=false,
+    outputdir=build
+]{minted}
+\setminted{
+    frame=lines,
+    framesep=2mm,
+    linenos=true,
+    numbersep=5pt,
+    xleftmargin=5pt,
+    fontsize=\footnotesize
+}
+%----------minted for code-----------------
+
+
+%----------misc----------------------------
+\usepackage{iitem}
+%----------misc----------------------------
 
 
 %----------chinese section-----------------
@@ -113,6 +146,6 @@
 
 
 %----------marcos--------------------------
-\newcommand{\LeftHeader}{通信电子线路}
-\newcommand{\RightHeader}{xxxx实验报告}
+\newcommand{\LeftHeader}{Left Header}
+\newcommand{\RightHeader}{Right Header}
 %----------marcos--------------------------

@@ -1,8 +1,6 @@
-% !TEX program = xelatex
 \documentclass[12pt]{article}
 
 \input{preamble.tex}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -83,13 +81,13 @@ Multisim仿真电路如图\ref{fig:csim}所示。
 \begin{appendices}
 
 \section{实验代码}
-% \lstinputlisting[language=C]{source.c}
-\begin{lstlisting}[language=C]
+\begin{minted}{c}
 int main(int argc, char * argv[]){
     printf("hello world");
     return 0;
 }
-\end{lstlisting}
+\end{minted}
+
 \end{appendices}
 
 \end{document}
